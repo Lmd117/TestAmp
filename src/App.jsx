@@ -2,17 +2,9 @@ import { useState, useRef, useCallback, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Webcam from 'react-webcam'
-import doPreProcessing from './preprocessing.js'
 
 function App() {
   const [count, setCount] = useState(0)
-
-  const [isCapturing, setIsCapturing] = useState(false)
-  const [captureInterval, setCaptureInterval] = useState(1);
-  const [processedFrames, setProcessedFrames] = useState(0);
-  const webcamRef = useRef(null);
-  const captureIntervalRef = useRef(null);
 
   // send the image (encoded in base 64) to our processing backend API
   const sendFrame = async (imageSrc) => {
